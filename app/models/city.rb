@@ -3,4 +3,8 @@ class City < ActiveRecord::Base
 
   belongs_to :state
   belongs_to :capitable, polymorphic: true
+
+  def self.capitals
+    City.where(capitable_type: 'State')
+  end
 end

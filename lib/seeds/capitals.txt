@@ -37,7 +37,7 @@ Texas, Austin
 Maine, Augusta
 Utah, Salt Lake City
 Maryland, Annapolis
-Vermont,    Montpelier
+Vermont, Montpelier
 Massachusetts, Boston
 Virginia, Richmond
 Michigan, Lansing

@@ -5,5 +5,13 @@ class State < ActiveRecord::Base
   has_many :cities
   belongs_to :nation
 
-  has_one :capital, as: :capitable
+  has_one :capital,
+    class_name: 'City',
+    foreign_key: :capitable_id,
+    primary_key: :id,
+    as: :capitable
+
+
+
+
 end

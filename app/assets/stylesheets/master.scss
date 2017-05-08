@@ -1,0 +1,88 @@
+button:hover {
+  cursor: pointer;
+  color: black;
+  transition: 0.3s;
+}
+
+h1 {
+  font-size: 50px;
+  text-align: center;
+  margin-top: 55px;
+  border-bottom: 2px solid black;
+}
+
+main {
+  width: 53%;
+  margin: 0 auto;
+}
+
+nav {
+  display: flex;
+  justify-content: center;
+  padding: 15px;
+  border-bottom: 1px solid #cccccc;
+  color: #009f9b;
+}
+
+button {
+  margin-left: 5%;
+  transition: 0.3s;
+  font-size: 12px;
+  letter-spacing: 1px;
+}
+
+nav button:first-child {
+  margin-left: 0;
+}
+
+div.topic {
+  width: 200px;
+  max-height: 162px;
+  padding-top: 77px;
+  padding-bottom: 77px;
+  text-align: center;
+  vertical-align: center;
+  border: 1px solid black;
+  margin-left: -1px;
+  margin-top: -1px;
+  background: #00b2a9;
+  color: white;
+}
+
+div.topic.empty {
+  background: inherit;
+  border: 1px solid white;
+  border-top: 1px solid black;
+  margin-top: -1px;
+}
+
+div.topics div.empty:first-child {
+  border-left: 1px solid black;
+}
+
+div.topics {
+  margin-top: 20px;
+  margin-bottom: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding-bottom: 40px;
+  border-bottom: 1px solid #ccc;
+  min-height: 100vh;
+  box-sizing: border-box;
+}
+
+footer {
+  text-align: center;
+  padding: 20px;
+}
+
+div.empty {
+  border-bottom: 1px solid white;
+  border-top: 1px solid white;
+}
+
+div.topic.full + div.empty {
+  margin-left: 0px;
+  margin-right: -1px;
+}

@@ -7,4 +7,5 @@ class City < ActiveRecord::Base
   def self.capitals
     City.where(capitable_type: 'State')
   end
+  
 end

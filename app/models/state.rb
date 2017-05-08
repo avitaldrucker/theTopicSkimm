@@ -11,7 +11,4 @@ class State < ActiveRecord::Base
     primary_key: :id,
     as: :capitable
 
-
-
-
 end

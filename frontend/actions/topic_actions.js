@@ -6,7 +6,7 @@ export const receiveTopics = (topics) => {
   return {
     type: RECEIVE_TOPICS,
     topics: topics
-  }
+  };
 };
 
 export const fetchTopics = (version, type) => {

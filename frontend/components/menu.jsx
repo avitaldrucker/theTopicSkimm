@@ -1,33 +1,60 @@
 import React from 'react';
-import { fetchTopics } from '../actions/topic_actions';
+import MenuIndexItem from './menu_index_item';
 import { connect } from 'react-redux';
 
-const Menu = ({ fetchTopics }) => {
-  const versions = [1, 2];
-  const types = ["national", "world"];
+import { fetchTopics } from '../actions/topic_actions';
 
-  const buttons = [];
 
-  versions.forEach((version, i) => {
-    types.forEach((type, j) => {
-      let text = `${type} v. ${version}`.toUpperCase();
-      buttons.push(
-        <button key={(i * 10) - j} onClick={fetchTopics(version, type)}>{text}</button>
-      );
+class Menu extends React.Component {
+
+  constructor(props) {
+    super(props);
+    this.state = { version: null, type: null };
+    this.fetchTopics = this.fetchTopics.bind(this);
+  }
+
+  fetchTopics(version, type) {
+    return(e) => {
+      this.props.fetchTopics(version, type);
+      this.setState({ version: version, type: type });
+    }
+  }
+
+  selected(buttonVersion, buttonType) {
+    return  this.state.version == buttonVersion &&
+            this.state.type == buttonType;
+  }
+
+  menuIndexItem(type, version, key) {
+    let className = this.selected(version, type) ? "selected" : "";
+
+    return(
+      <MenuIndexItem
+        fetchTopics={this.fetchTopics} className={className}
+        key={key} type={type} version={version}/>
+    );
+  }
+
+
+  render() {
+    const buttons = [];
+    const { type, version } = this.props;
+
+    [1, 2].forEach((version, i) => {
+      ["national", "world"].forEach((type, j) => {
+        buttons.push(this.menuIndexItem(type, version, (i * 5) - j));
+      });
     });
-  });
 
-  return(
-    <nav>
-      {buttons}
-    </nav>
-  );
-};
+    return(<nav>{buttons}</nav>);
+  }
+
+}
 
 const mapDispatchToProps = (dispatch) => {
   return {
     fetchTopics: (version, type) => {
-      return () => (dispatch(fetchTopics(version, type)));
+      return dispatch(fetchTopics(version, type));
     }
   };
 };

@@ -1,5 +1,1 @@
-@cities.each do |city|
-  json.set! city.id do
-    json.partial! "cities/city", city: city
-  end
-end
+json.partial! "index_shared", resources: @cities

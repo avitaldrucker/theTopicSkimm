@@ -1,4 +1,3 @@
 export const fetchTopics = (version, type) => {
-  const url = `/v${version}/topics/${type}`
-  return fetch(url);
+  return fetch(`/v${version}/topics/${type}`);
 };

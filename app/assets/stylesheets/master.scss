@@ -49,6 +49,10 @@ div.topic {
   color: white;
 }
 
+div.topic.full:hover {
+  background: #00a098;
+}
+
 div.topic.empty {
   background: inherit;
   border: 1px solid white;

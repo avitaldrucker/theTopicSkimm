@@ -1,6 +1,8 @@
 # theTopicSkimm
 
-[Gitwork][live] is a fullstack, versioned web application for filtering world and national topics. It uses Ruby on Rails on the backend, a PostgreSQL database, and React and Redux on the frontend.
+theTopicSkimm is a fullstack, versioned web application for filtering world and national topics. It uses Ruby on Rails on the backend, a PostgreSQL database, and React and Redux on the frontend.
+
+Please find the live version [here][live] and allow up to 30 seconds for Heroku to spin up.
 
 [live]: http://thetopicskimm.herokuapp.com/
 
